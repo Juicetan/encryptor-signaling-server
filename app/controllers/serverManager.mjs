@@ -69,6 +69,8 @@ class ServerManager{
           if (clients.size === 2) {
             io.to(room).emit('ready');
           }
+        } else{
+          io.to(room).emit('room-full');
         }
         console.log('> room clients', clients);
       });
